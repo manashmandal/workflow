@@ -1,4 +1,4 @@
-# Deploy to Digitalocean, AWS EC2, GCP GCE over SSH
+# Deploy to Digitalocean, AWS EC2, GCP GCE over SSH using GitHub Actions
 
 Here is a rough example of deploying a basic flask application in VM over SSH via GitHub Actions!
 
