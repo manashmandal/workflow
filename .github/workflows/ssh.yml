@@ -12,3 +12,8 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
         script: ls -a
+    - name: checkout the master branch
+      uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+        script: ls -a
