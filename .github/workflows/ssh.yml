@@ -11,13 +11,18 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          script: ls -a
-      - name: checkout the master branch
-        uses: actions/checkout@v1
-        with:
-          ref: master
-          # script: ls -a
-      - name: fetch ip
-        run: curl -X GET https://api.ipify.org
-      - name: deploy the project
-        run: /bin/bash deploy.sh
+          script: |
+            curl -X GET https://api.ipify.org
+            git clone https://${{ secrets.GH_TOKEN }}@github.com/manashmandal/workflow.git
+            cd workflow
+            /bin/bash deploy.sh
+
+      # - name: checkout the master branch
+      #   uses: actions/checkout@v1
+      #   with:
+      #     ref: master
+      #     # script: ls -a
+      # - name: fetch ip
+      #   run: curl -X GET https://api.ipify.org
+      # - name: deploy the project
+      #   run: /bin/bash deploy.sh
