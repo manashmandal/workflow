@@ -15,6 +15,7 @@ jobs:
       - name: checkout the master branch
         uses: actions/checkout@v1
         with:
-          fetch-depth: 1
+          ref: master
           # script: ls -a
+      - run: ls -a
       - run: /bin/bash deploy.sh
