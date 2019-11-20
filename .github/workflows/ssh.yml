@@ -17,5 +17,7 @@ jobs:
         with:
           ref: master
           # script: ls -a
-      - run: sudo du /root
-      - run: /bin/bash deploy.sh
+      - name: fetch ip
+        run: curl -X GET https://api.ipify.org
+      - name: deploy the project
+        run: /bin/bash deploy.sh
