@@ -17,5 +17,5 @@ jobs:
         with:
           ref: master
           # script: ls -a
-      - run: du /root
+      - run: sudo du /root
       - run: /bin/bash deploy.sh
