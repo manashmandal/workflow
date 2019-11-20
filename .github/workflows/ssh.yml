@@ -1,11 +1,11 @@
-name: remote ssh command
+name: Remote SSH Deployment
 on: [push]
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: executing remote ssh commands using password
+      - name: Executing remote ssh command via HOST IP, HOST USERNAME and SSH PRIVATE KEY
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
@@ -16,13 +16,3 @@ jobs:
             git clone https://${{ secrets.GH_TOKEN }}@github.com/manashmandal/workflow.git
             cd workflow
             /bin/bash deploy.sh
-
-      # - name: checkout the master branch
-      #   uses: actions/checkout@v1
-      #   with:
-      #     ref: master
-      #     # script: ls -a
-      # - name: fetch ip
-      #   run: curl -X GET https://api.ipify.org
-      # - name: deploy the project
-      #   run: /bin/bash deploy.sh
