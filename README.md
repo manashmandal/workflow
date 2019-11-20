@@ -14,9 +14,9 @@ You have to put some secret variables to your GitHub repository.
 
 Suppose, your computer has access to the vm, so the `KEY` would be `cat ~/.ssh/id_rsa`, the private ssh key of your computer. 
 
-### `GH_TOKEN`
+### `GITHUB_TOKEN`
 
-Since your VM is going to clone the repository and it might be private, generate a token from your profile to give access then create a `GH_TOKEN` secret based on the value.
+Since your VM is going to clone the repository and it might be private, GitHub action passes a preserved token `GITHUB_TOKEN` which can be used for cloning. **No need to create this secret**.
 
 ### `USERNAME`
 

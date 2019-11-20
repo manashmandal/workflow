@@ -13,6 +13,6 @@ jobs:
           key: ${{ secrets.KEY }}
           script: |
             curl -X GET https://api.ipify.org
-            git clone https://${{ secrets.GH_TOKEN }}@github.com/manashmandal/workflow.git
+            git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/manashmandal/workflow.git
             cd workflow
             /bin/bash deploy.sh
